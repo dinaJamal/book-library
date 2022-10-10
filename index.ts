@@ -4,6 +4,8 @@ const port = process.env.PORT || 3000;
 import db from "./models";
 import { authors } from "./seeders/Authors";
 import { books } from "./seeders/Books";
+import { tags } from "./seeders/Tags";
+
 
 // const createAuthors = () => {
 //   authors.map((author) => {
@@ -12,12 +14,19 @@ import { books } from "./seeders/Books";
 // };
 // createAuthors();
 
-const createBooks = () => {
-  books.map((book) => {
-    db.Book.create(book);
+// const createBooks = () => {
+//   books.map((book) => {
+//     db.Book.create(book);
+//   });
+// };
+// createBooks();
+
+const createTags = () => {
+  tags.map((tag) => {
+    db.Tags.create(tag);
   });
 };
-createBooks();
+createTags();
 
 db.sequelize.sync().then(() => {
   app.listen(port, () => {
