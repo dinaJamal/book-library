@@ -1,6 +1,5 @@
 import { Router, Request, Response } from "express";
 import db from "../models";
-import { body, validationResult } from "express-validator";
 
 const router = Router();
 
