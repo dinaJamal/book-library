@@ -9,12 +9,14 @@ import { bookTags } from "./seeders/BookTags";
 import authorRoutes from './routes/authorRoutes'
 import bookRoutes from './routes/bookRoutes'
 import tagRoutes from './routes/tagsRoutes'
+import login from './routes/login'
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/books', bookRoutes)
 app.use('/authors', authorRoutes);
 app.use('/tags', tagRoutes);
+app.use('/login', login);
 
 // app.use('/tags', tagsRoutes)
 

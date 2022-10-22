@@ -1,7 +1,6 @@
 import { Router, Request, Response } from "express";
 import db from "../models";
 import { authorSchema } from "../validation/authorValidation";
-import { bookSchema } from "../validation/bookValidation";
 import validate from "../validation/validationMiddleware";
 
 const router = Router();
@@ -44,7 +43,7 @@ router.put("/:id", async (req, res) => {
   //2- if there is validation error return 400(bad request)
   //3- if validation passed we update the model and return 200
   const validateResult = await validate({
-    schema: bookSchema,
+    schema: authorSchema,
     data: req.body,
   });
   if (!validateResult.isValid) {
